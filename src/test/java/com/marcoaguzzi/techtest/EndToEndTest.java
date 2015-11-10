@@ -62,7 +62,7 @@ public class EndToEndTest {
 	public void test() {
 		int i=1;
 		for (ShoppingCart sc : shoppingCarts) {
-			System.out.println("***** sc "+i);
+			System.out.println("Shopping Cart "+i);
 			for (ShoppingCartEntry sce : sc.getEntries()) {
 				System.out.print(sce.getQuantity()+";");
 				System.out.print(sce.getImported()+";");
