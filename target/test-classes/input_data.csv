@@ -1,0 +1,12 @@
+#Input:1
+1;false;false;book;12.49
+1;false;false;music CD;14.99
+1;false;false;chocolate bar;0.85
+#Input:2
+1;true;true;imported box of chocolates;10.00
+1;true;false;imported bottle of perfume;47.50
+#Input:3
+1;true;false;imported bottle of perfume;27.99
+1;false;false;bottle of perfume;18.99
+1;false;false;packet of headache pills;9.75
+1;true;true;box of imported chocolates;11.25
