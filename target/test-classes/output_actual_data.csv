@@ -1,15 +1,15 @@
-Shopping Cart 1
+Shopping Cart 1 
 1;false;BOOKS;book;12.49
 1;false;MUSIC;music CD;16.49
 1;false;FOOD;chocolate bar;0.85
 Sales Taxes = 1.50
 Total = 29.83
-Shopping Cart 2
+Shopping Cart 2 
 1;true;FOOD;imported box of chocolates;10.50
 1;true;CARE;imported bottle of perfume;54.65
 Sales Taxes = 7.65
 Total = 65.15
-Shopping Cart 3
+Shopping Cart 3 
 1;true;CARE;imported bottle of perfume;32.19
 1;false;CARE;bottle of perfume;20.89
 1;false;MEDICAL;packet of headache pills;9.75
