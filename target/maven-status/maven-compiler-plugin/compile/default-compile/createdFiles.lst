@@ -1,9 +1,0 @@
-com/marcoaguzzi/techtest/constants/TechTestConstants.class
-com/marcoaguzzi/techtest/logic/ICalculationMethod.class
-com/marcoaguzzi/techtest/logic/TaxFactory.class
-com/marcoaguzzi/techtest/logic/impl/StandardCalculationMethod.class
-com/marcoaguzzi/techtest/logic/CalculationMethodFactory.class
-util/TechTestInputReader.class
-com/marcoaguzzi/techtest/model/ShoppingCart.class
-com/marcoaguzzi/techtest/logic/impl/ImportedCalculationMethod.class
-com/marcoaguzzi/techtest/model/ShoppingCartEntry.class

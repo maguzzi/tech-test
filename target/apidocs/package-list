@@ -1,0 +1,5 @@
+com.marcoaguzzi.techtest.constants
+com.marcoaguzzi.techtest.logic
+com.marcoaguzzi.techtest.logic.impl
+com.marcoaguzzi.techtest.model
+util

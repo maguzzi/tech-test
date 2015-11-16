@@ -6,4 +6,5 @@
 /Users/marcoaguzzi/Documents/workspace-sts-3.7.0.RELEASE/tech-test/src/main/java/com/marcoaguzzi/techtest/logic/ICalculationMethod.java
 /Users/marcoaguzzi/Documents/workspace-sts-3.7.0.RELEASE/tech-test/src/main/java/com/marcoaguzzi/techtest/model/ShoppingCart.java
 /Users/marcoaguzzi/Documents/workspace-sts-3.7.0.RELEASE/tech-test/src/main/java/com/marcoaguzzi/techtest/model/ShoppingCartEntry.java
+/Users/marcoaguzzi/Documents/workspace-sts-3.7.0.RELEASE/tech-test/src/main/java/com/marcoaguzzi/techtest/logic/CalculatorFactory.java
 /Users/marcoaguzzi/Documents/workspace-sts-3.7.0.RELEASE/tech-test/src/main/java/util/TechTestInputReader.java

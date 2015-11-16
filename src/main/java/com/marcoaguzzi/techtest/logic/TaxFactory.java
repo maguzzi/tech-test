@@ -5,6 +5,14 @@ import java.util.Locale;
 
 import org.apache.log4j.Logger;
 
+/**
+ * this factory could be used as a lookup table for managing different countries
+ * with different taxes, all the process does not know about which tax should be applied
+ * but asks it to this class
+ * 
+ * @author marcoaguzzi
+ *
+ */
 public class TaxFactory {
 	private static TaxFactory _instance;
 	
@@ -21,6 +29,11 @@ public class TaxFactory {
 		return _instance;
 	}
 	
+	/**
+	 * Gives the VAT given the locale
+	 * @param locale 
+	 * @return the input locale
+	 */
 	public BigDecimal getValueAddedTaxRate(Locale locale) {
 		
 		BigDecimal vatAddedTaxRate;
@@ -39,6 +52,11 @@ public class TaxFactory {
 		return vatAddedTaxRate;
 	}
 	
+	/**
+	 * Gives the import duty given the locale
+	 * @param locale input locale
+	 * @return
+	 */
 	public BigDecimal getImportedTaxRate(Locale locale) {
 		
 		BigDecimal importedTaxRate;

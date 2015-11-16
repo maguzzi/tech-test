@@ -1,18 +1,16 @@
 package com.marcoaguzzi.techtest.model;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 
-import org.apache.log4j.Logger;
-
-import com.marcoaguzzi.techtest.constants.TechTestConstants;
-import com.marcoaguzzi.techtest.logic.CalculationMethodFactory;
-
+/**
+ * The model for the single entry of a cart. It contains also a pointer to its parent container,
+ * in order to retrieve the locale and avoid redundancy. It has been speculated that any entry
+ * of a shopping cart has the same locale
+ * @author marcoaguzzi
+ *
+ */
 public class ShoppingCartEntry {
 
-	private Logger log = Logger.getLogger(ShoppingCartEntry.class);
-	
 	private BigDecimal quantity;
 	private String description;
 	private BigDecimal price;
@@ -34,13 +32,6 @@ public class ShoppingCartEntry {
 		
 	}
 
-	public void applyTaxRateAndComputePrice(BigDecimal taxRate) {
-		appliedTaxes = CalculationMethodFactory.getInstance().getRoundedValueToNearest(TechTestConstants.NEAREST_ROUND,taxRate.multiply(price).divide(new BigDecimal("100.0"),2,RoundingMode.HALF_UP));
-		priceWithTaxes = priceWithTaxes.add(appliedTaxes);
-		
-		log.trace(String.format("category: %s imported %s price: %.2f applied taxes: %.2f priceWithTaxes: %.2f", category,imported,price,appliedTaxes,priceWithTaxes));
-	}
-	
 	public BigDecimal getQuantity() {
 		return quantity;
 	}
@@ -95,20 +86,6 @@ public class ShoppingCartEntry {
 
 	public void setAppliedTaxes(BigDecimal appliedTaxes) {
 		this.appliedTaxes = appliedTaxes;
-	}
-
-	public String toString() {
-		StringBuffer sb = new StringBuffer();
-		sb.append(quantity).append(";");
-		sb.append(imported).append(";");
-		sb.append(category).append(";");
-		sb.append(description).append(";");
-		
-		DecimalFormat numberFormat = (DecimalFormat) DecimalFormat.getInstance(shoppingCart.getLocale());
-		numberFormat.applyLocalizedPattern("0.00");
-				
-		sb.append(numberFormat.format(priceWithTaxes)).append(TechTestConstants.CARRIAGE_RETURN);
-		return sb.toString();
 	}
 
 	public ShoppingCart getShoppingCart() {

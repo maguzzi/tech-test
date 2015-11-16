@@ -12,7 +12,22 @@ import java.util.Locale;
 import com.marcoaguzzi.techtest.model.ShoppingCart;
 import com.marcoaguzzi.techtest.model.ShoppingCartEntry;
 
+/**
+ * Utility class used to put given input into the model
+ * 
+ * @author marcoaguzzi
+ *
+ */
 public class TechTestInputReader {
+	
+	/**
+	 * A simple parsing is used to input data into the model. The format of the file is
+	 * #Shopping cart {number}:{locale}
+	 * quantity;imported;category;description;price
+	 * @param file File with input data
+	 * @return a list of shopping cart, as modeled in the model package
+	 * @throws Exception
+	 */
 	public static List<ShoppingCart> readInputFile(File file) throws Exception {
 		List<ShoppingCart> shoppingCarts = new ArrayList<ShoppingCart>();
 		LineNumberReader lnr = new LineNumberReader(new FileReader(file));
@@ -42,6 +57,12 @@ public class TechTestInputReader {
 		return shoppingCarts;
 	}
 
+	/**
+	 * parsing of a single line 
+	 * @param line the file line
+	 * @return a shopping cart entry populated with data
+	 * @throws Exception
+	 */
 	private static ShoppingCartEntry convertLineToShoppingCart(String line) throws Exception {
 		if (line.contains(";")) {
 			String[] fields = line.split(";");
@@ -55,7 +76,6 @@ public class TechTestInputReader {
 			BigDecimal price = new BigDecimal(fields[4]);
 			price.setScale(2,RoundingMode.HALF_UP);
 			sce.setPrice(price);
-			sce.setPriceWithTaxes(price);
 			return sce;
 		} else {
 			throw new Exception(line);

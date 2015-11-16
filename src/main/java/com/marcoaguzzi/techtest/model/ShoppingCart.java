@@ -1,13 +1,17 @@
 package com.marcoaguzzi.techtest.model;
 
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import com.marcoaguzzi.techtest.constants.TechTestConstants;
-
+/**
+ * the shopping list container, the locale is set in this bean
+ * because every shopping cart could be from a different user and hence in a different
+ * language with different tax rates
+ * @author marcoaguzzi
+ *
+ */
 public class ShoppingCart {
 	private int id;
 	private List<ShoppingCartEntry> entries;
@@ -58,28 +62,6 @@ public class ShoppingCart {
 		entries.add(entry);
 	}
 
-	public void calculateTotal() {		
-		for (ShoppingCartEntry sc : entries) {
-			total = total.add(sc.getPriceWithTaxes());
-			salesTaxes = salesTaxes.add(sc.getAppliedTaxes());
-		}
-	}
-	
-	public String toString() {
-		StringBuffer sb = new StringBuffer();
-		sb.append("Shopping Cart ").append(id).append(" ").append(TechTestConstants.CARRIAGE_RETURN);
-		for (ShoppingCartEntry sce : entries) {
-			sb.append(sce.toString());
-		}
-		
-		DecimalFormat numberFormat = (DecimalFormat) DecimalFormat.getInstance(locale);
-		numberFormat.applyLocalizedPattern("0.00");
-		
-		sb.append("Sales Taxes = ").append(numberFormat.format(salesTaxes)).append(TechTestConstants.CARRIAGE_RETURN);
-		sb.append("Total = ").append(numberFormat.format(total)).append(TechTestConstants.CARRIAGE_RETURN);
-		return sb.toString();
-	}
-	
 	public Locale getLocale() {
 		return this.locale;
 	}
