@@ -19,6 +19,14 @@ import com.marcoaguzzi.techtest.model.ShoppingCartEntry;
 
 import util.TechTestInputReader;
 
+/**
+ * Given the input data provided in the input file, a test is run to produce the output
+ * data, as instructed in the output test file. As a "black box" end to end test, the two
+ * files are read and each line is compared
+ * 
+ * @author marcoaguzzi
+ *
+ */
 public class EndToEndTest {
 
 	private List<ShoppingCart> shoppingCarts;
