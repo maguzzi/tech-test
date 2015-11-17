@@ -1,7 +1,5 @@
 package com.marcoaguzzi.techtest.logic;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.util.Arrays;
 
 import org.apache.log4j.Logger;

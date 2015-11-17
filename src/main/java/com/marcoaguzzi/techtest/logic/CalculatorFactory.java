@@ -2,7 +2,6 @@ package com.marcoaguzzi.techtest.logic;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.Iterator;
 
 import org.apache.log4j.Logger;

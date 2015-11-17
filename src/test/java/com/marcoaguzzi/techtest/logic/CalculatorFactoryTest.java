@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.util.Locale;
 
 import org.apache.log4j.Logger;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
