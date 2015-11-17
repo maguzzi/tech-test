@@ -14,6 +14,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.marcoaguzzi.techtest.logic.CalculatorFactory;
+import com.marcoaguzzi.techtest.logic.MarshallerFactory;
 import com.marcoaguzzi.techtest.model.ShoppingCart;
 
 import util.TechTestInputReader;
@@ -75,7 +76,7 @@ public class EndToEndTest {
 		FileOutputStream fosActual = new FileOutputStream(outputActualDataFile); 
 		
 		for (ShoppingCart sc : shoppingCarts) {
-			fosActual.write(CalculatorFactory.getInstance().marshalShoppingCart(sc).getBytes());
+			fosActual.write(MarshallerFactory.getInstance().marshalShoppingCart(sc).getBytes());
 		}
 		
 		fosActual.flush();

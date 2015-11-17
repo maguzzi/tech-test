@@ -71,7 +71,7 @@ public class TechTestInputReader {
 			quantity.setScale(2,RoundingMode.HALF_UP);
 			sce.setQuantity(quantity);
 			sce.setImported(Boolean.parseBoolean(fields[1]));
-			sce.setCategory(fields[2]);
+			sce.setCategory(fields[2].toUpperCase());
 			sce.setDescription(fields[3]);
 			BigDecimal price = new BigDecimal(fields[4]);
 			price.setScale(2,RoundingMode.HALF_UP);

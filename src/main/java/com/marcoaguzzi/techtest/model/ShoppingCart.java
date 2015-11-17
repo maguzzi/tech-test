@@ -2,6 +2,7 @@ package com.marcoaguzzi.techtest.model;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
@@ -15,6 +16,7 @@ import java.util.Locale;
 public class ShoppingCart {
 	private int id;
 	private List<ShoppingCartEntry> entries;
+	private Boolean cartIsReadyForTotal;
 	private BigDecimal salesTaxes;
 	private BigDecimal total;
 	private Locale locale;
@@ -23,6 +25,7 @@ public class ShoppingCart {
 		entries = new ArrayList<ShoppingCartEntry>();
 		salesTaxes = BigDecimal.ZERO;
 		total = BigDecimal.ZERO;
+		cartIsReadyForTotal = Boolean.FALSE;
 		this.locale = locale;
 	}
 	
@@ -32,14 +35,6 @@ public class ShoppingCart {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public List<ShoppingCartEntry> getEntries() {
-		return entries;
-	}
-
-	public void setEntries(List<ShoppingCartEntry> entries) {
-		this.entries = entries;
 	}
 
 	public BigDecimal getSalesTaxes() {
@@ -60,9 +55,27 @@ public class ShoppingCart {
 
 	public void addEntry(ShoppingCartEntry entry) {
 		entries.add(entry);
+		cartIsReadyForTotal = Boolean.FALSE;
+	}
+	
+	public void removeEntry(ShoppingCartEntry entry) {
+		entries.remove(entry);
+		cartIsReadyForTotal = Boolean.FALSE;
 	}
 
 	public Locale getLocale() {
 		return this.locale;
+	}
+
+	public Boolean getCartIsReadyForTotal() {
+		return cartIsReadyForTotal;
+	}
+
+	public void setCartIsReadyForTotal(Boolean cartIsReadyForTotal) {
+		this.cartIsReadyForTotal = cartIsReadyForTotal;
+	}	
+	
+	public Iterator<ShoppingCartEntry> getEntriesIterator() {
+		return entries.iterator();
 	}
 }

@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 import org.apache.log4j.Logger;
 
+import com.marcoaguzzi.techtest.constants.Categories;
 import com.marcoaguzzi.techtest.logic.impl.ImportedCalculationMethod;
 import com.marcoaguzzi.techtest.logic.impl.StandardCalculationMethod;
 import com.marcoaguzzi.techtest.model.ShoppingCartEntry;
@@ -42,29 +43,9 @@ public class CalculationMethodFactory {
 	 * @return
 	 */
 	public Boolean getExemption(String category) {
-		Boolean exempt = Arrays.asList(new String[]{"FOOD","MEDICAL","BOOKS"}).contains(category);
+		Boolean exempt = Arrays.asList(new String[]{Categories.FOOD.name(),Categories.MEDICAL.name(),Categories.BOOKS.name()}).contains(category);
 		log.debug(String.format("category %s is %s an exempt",category,exempt?"":"not"));
 		return exempt;
-	}
-	
-	/**
-	 * Ceiling with BigDecimals
-	 * @param bd input data
-	 * @return
-	 */
-	private BigDecimal ceil(BigDecimal bd) {
-		return bd.setScale(0, RoundingMode.CEILING);
-	}
-	
-	/**
-	 * used to perform the roundup to the nearest x (in the exercise, 0.05)
-	 * @param nearestS
-	 * @param value input data
-	 * @return rounded value
-	 */
-	public BigDecimal getRoundedValueToNearest(String nearestS,BigDecimal value) {
-		BigDecimal nearest = new BigDecimal(nearestS);
-		return ceil(value.divide(nearest)).multiply(nearest);
 	}
 	
 	/**
