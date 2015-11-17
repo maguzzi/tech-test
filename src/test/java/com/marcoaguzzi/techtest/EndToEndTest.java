@@ -16,8 +16,7 @@ import org.junit.Test;
 import com.marcoaguzzi.techtest.logic.CalculatorFactory;
 import com.marcoaguzzi.techtest.logic.MarshallerFactory;
 import com.marcoaguzzi.techtest.model.ShoppingCart;
-
-import util.TechTestInputReader;
+import com.marcoaguzzi.techtest.util.TechTestInputReader;
 
 /**
  * Given the input data provided in the input file, a test is run to produce the output

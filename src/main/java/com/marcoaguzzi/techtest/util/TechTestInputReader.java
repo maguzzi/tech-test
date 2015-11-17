@@ -1,4 +1,4 @@
-package util;
+package com.marcoaguzzi.techtest.util;
 
 import java.io.File;
 import java.io.FileReader;

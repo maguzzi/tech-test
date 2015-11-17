@@ -9,8 +9,7 @@ import org.apache.log4j.Logger;
 import com.marcoaguzzi.techtest.constants.TechTestConstants;
 import com.marcoaguzzi.techtest.model.ShoppingCart;
 import com.marcoaguzzi.techtest.model.ShoppingCartEntry;
-
-import util.MathUtils;
+import com.marcoaguzzi.techtest.util.MathUtils;
 
 /**
  * this class serves as a component utility for calculation methods that

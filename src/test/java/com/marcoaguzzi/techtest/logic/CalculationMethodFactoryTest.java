@@ -9,8 +9,7 @@ import com.marcoaguzzi.techtest.constants.TechTestConstants;
 import com.marcoaguzzi.techtest.logic.impl.ImportedCalculationMethod;
 import com.marcoaguzzi.techtest.logic.impl.StandardCalculationMethod;
 import com.marcoaguzzi.techtest.model.ShoppingCartEntry;
-
-import util.MathUtils;
+import com.marcoaguzzi.techtest.util.MathUtils;
 
 public class CalculationMethodFactoryTest {
 	
