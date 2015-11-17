@@ -1,2 +1,2 @@
 language: java
-script: mvn test package
+script: mvn test package -Dmaven.javadoc.verbose=true
