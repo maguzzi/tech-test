@@ -53,11 +53,19 @@ public class ShoppingCart {
 		this.total = total;
 	}
 
+	/**
+	 * adds an entry to the basket. Ready status is reset to false
+	 * @param entry
+	 */
 	public void addEntry(ShoppingCartEntry entry) {
 		entries.add(entry);
 		cartIsReadyForTotal = Boolean.FALSE;
 	}
 	
+	/**
+	 * removes an entry to the basket. Ready status is reset to false
+	 * @param entry
+	 */
 	public void removeEntry(ShoppingCartEntry entry) {
 		entries.remove(entry);
 		cartIsReadyForTotal = Boolean.FALSE;
@@ -75,6 +83,10 @@ public class ShoppingCart {
 		this.cartIsReadyForTotal = cartIsReadyForTotal;
 	}	
 	
+	/** 
+	 * @return the entry iterator. This is done in order to leave the entry list private (no add / remove) from
+	 * the outside is possible
+	 */
 	public Iterator<ShoppingCartEntry> getEntriesIterator() {
 		return entries.iterator();
 	}
